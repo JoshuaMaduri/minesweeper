@@ -24,7 +24,7 @@ export function Game() {
         {!gameStatus ? (
             <button onClick={startGame}>Start Game</button>
         ) : (
-            <Board rows={8} columns={8} mines={10}/> 
+            <Board rows={8} columns={8} mines={10} setGameStatus={setGameStatus}/> 
         )}
         
       </Container>
