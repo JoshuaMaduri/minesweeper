@@ -1,6 +1,7 @@
 import React from 'react';
 import ReactDOM from 'react-dom/client';
-import { Game } from './components/Game/Game';
+import {Game} from './features/game/Game';
+
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
@@ -8,4 +9,5 @@ root.render(
     <Game />
   </React.StrictMode>
 );
+
 
