@@ -1,7 +1,10 @@
-export const Cell = () => {
+import './cell.css'
+
+export const Cell = ({value, leftClick, rightClick}) => {
+
     return (
-        <div>
-            <h1>Hello World</h1>
+        <div className='cell' onClick={leftClick} onContextMenu={rightClick}>
+            
         </div>
     )
 
