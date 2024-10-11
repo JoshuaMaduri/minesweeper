@@ -1,12 +1,13 @@
 import React from 'react';
 import ReactDOM from 'react-dom/client';
-import {Game} from './features/game/Game';
+import { Game } from './features/game/Game';
+
 
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <React.StrictMode>
-    <Game />
+    <Game/>
   </React.StrictMode>
 );
 

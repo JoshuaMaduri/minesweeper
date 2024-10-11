@@ -1,17 +1,17 @@
 .cell {
-    background-color: blue;
+    background-color: grey;
     width: 25px;
     height: 25px;
 }
 
-#revealed {
+.revealed {
     background-color: blueviolet;
 }
 
-#flagged {
+.flagged {
     background-color: yellow;
 }
 
-#mine {
+.mine {
     background-color: black;
 }

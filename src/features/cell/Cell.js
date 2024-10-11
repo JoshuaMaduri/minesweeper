@@ -1,11 +1,17 @@
-import './cell.css'
+import React from 'react';
+import './cell.css';
 
-export const Cell = ({value, leftClick, rightClick}) => {
+export function Cell({ cell, onClick, onRightClick }) {
+  const { isRevealed, isMine, isFlagged, neighborMines } = cell;
 
-    return (
-        <div className='cell' onClick={leftClick} onContextMenu={rightClick}>
-            
-        </div>
-    )
-
+  return (
+    <div
+      className={`cell ${isRevealed ? 'revealed' : ''} ${isFlagged ? 'flagged' : ''}`}
+      onClick={onClick}
+      onContextMenu={onRightClick}
+    >
+      {isRevealed && isMine && '💣'}
+      {isRevealed && !isMine && neighborMines > 0 && neighborMines}
+    </div>
+  );
 }
