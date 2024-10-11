@@ -46,9 +46,10 @@ export const Board = ({rows, columns, mines}) => {
     const handleRightClick = (e, row, col) => {
         e.preventDefault();
         const newGrid = grid.map(row => row.map(cell => ({ ...cell })));
-        if(!newGrid[row][col].isRevaled && !newGrid[row][col].isFlagged){
-            newGrid[row][col].isFlagged = true
-            setGrid(newGrid)
+        
+        if (!newGrid[row][col].isRevealed) {
+            newGrid[row][col].isFlagged = !newGrid[row][col].isFlagged;
+            setGrid(newGrid);
         }
         
     };

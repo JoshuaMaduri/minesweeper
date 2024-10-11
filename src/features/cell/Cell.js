@@ -6,7 +6,7 @@ export function Cell({ cell, onClick, onRightClick }) {
 
   return (
     <div
-      className={`cell ${isRevealed ? 'revealed' : ''} ${isFlagged ? 'flagged' : ''}`}
+      className={`cell ${!isRevealed ? 'revealed' : ''} ${isFlagged ? 'flagged' : ''}`}
       onClick={onClick}
       onContextMenu={onRightClick}
     >
