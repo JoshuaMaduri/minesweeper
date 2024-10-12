@@ -20,7 +20,7 @@ export function Game() {
             {!gameStatus ? (
                 <button onClick={startGame}>Start Game</button>
             ): (
-                <Board rows={1} columns={2} mines={1}/>
+                <Board rows={1} columns={2} mines={1} gameStatus={gameStatus}/>
             )}
 
         </Box>
