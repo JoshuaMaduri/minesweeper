@@ -8,15 +8,11 @@ const BOARD_SIZE = 10;
 const NUM_MINES = 15;
 
 export const Minesweeper = () => {
-  const [board, setBoard] = useState([]);
+  const [board, setBoard] = useState(() => initializeBoard());
   const [gameOver, setGameOver] = useState(false);
   const [win, setWin] = useState(false);
 
-  useEffect(() => {
-    initializeBoard();
-  }, []);
-
-  const initializeBoard = () => {
+  function initializeBoard() {
     const newBoard = Array(BOARD_SIZE).fill().map(() => Array(BOARD_SIZE).fill(0));
     
     // Place mines
@@ -47,7 +43,11 @@ export const Minesweeper = () => {
       }
     }
 
-    setBoard(newBoard.map(row => row.map(cell => ({ value: cell, revealed: false, flagged: false }))));
+    return newBoard.map(row => row.map(cell => ({ value: cell, revealed: false, flagged: false })));
+  }
+
+  const resetGame = () => {
+    setBoard(initializeBoard());
     setGameOver(false);
     setWin(false);
   };
@@ -113,7 +113,7 @@ export const Minesweeper = () => {
         />
       </Paper>
       <GameStatus gameOver={gameOver} win={win} />
-      <NewGameButton onClick={initializeBoard} />
+      <NewGameButton onClick={resetGame} />
     </Box>
   );
 };
